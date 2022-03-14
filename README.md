@@ -13,7 +13,7 @@
 
 ## Funções:
 
-![funcoes](Images/funcoes.png)
+![funcoes.png](Images/funcoes.png)
 
 ### Listar as Pessoas e Empresas:
 
