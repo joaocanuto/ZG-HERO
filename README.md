@@ -1,4 +1,4 @@
-# LinkedTinde
+# LinkedTinder
 
 # Próximos Updates:
 
