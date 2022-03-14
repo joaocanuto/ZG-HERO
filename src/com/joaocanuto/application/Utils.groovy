@@ -5,7 +5,7 @@ class Utils {
 
     static int printarMenu() {
         println ""
-        println "println O que deseja fazer ?"
+        println "O que deseja fazer ?"
         println "0 - Sair da Aplicação"
         println "1 - Listar as Empresa cadastradas!"
         println "2 - Listar os Devs cadastrados"
