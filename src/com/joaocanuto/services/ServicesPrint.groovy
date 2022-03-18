@@ -40,6 +40,7 @@ class ServicesPrint implements IServicesPrint{
     Person personWasInserted(){
         Person answer = new Person();
         String bufferForAswers;
+        answer.tipo = '1'
         Scanner input = new Scanner(System.in)
         println "Qual o nome do candidato que você deseja adcionar: "
         answer.name = input.nextLine()
@@ -67,9 +68,12 @@ class ServicesPrint implements IServicesPrint{
     @Override
     Company companyWasInserted(){
         Company answer = new Company();
+        answer.tipo = '0'
         Scanner input = new Scanner(System.in)
         println "Qual o nome da empresa que você deseja adcionar: "
         answer.name = input.nextLine()
+        println "Qual o email da empresa: "
+        answer.email = input.nextLine()
         println "Qual o seu cnpj: "
         answer.cnpj = input.nextLine()
         println "Qual seu pais: "
