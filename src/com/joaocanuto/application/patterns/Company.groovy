@@ -1,4 +1,4 @@
-package com.joaocanuto.application
+package com.joaocanuto.application.patterns
 
 class Company extends PersonPattern{
     String cnpj
@@ -6,7 +6,8 @@ class Company extends PersonPattern{
 
     @Override
     public String toString() {
-        return  name  +
+        return  tipo +
+                "," + name  +
                 "," + email  +
                 "," + cnpj  +
                 "," + pais  +

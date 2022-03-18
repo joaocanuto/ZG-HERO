@@ -1,29 +1,46 @@
 package com.joaocanuto.application
 
-import java.lang.reflect.Array
+import com.joaocanuto.application.patterns.Company
+import com.joaocanuto.application.patterns.Person
+import com.joaocanuto.services.ServicesApplication
+import com.joaocanuto.services.ServicesFiles
+import com.joaocanuto.services.ServicesPrint
 
-ArrayList<Person> p = new ArrayList<>()
-ArrayList<Company> c = new ArrayList<>()
+ArrayList<Person> arraylistOfPeople = new ArrayList<>()
+ArrayList<Company> arraylistOfCompanies = new ArrayList<>()
 
-FileUtils f = new FileUtils(filePath: "file.txt")
-f.readFileData(p,c)
+ServicesApplication servicesApplication = new ServicesApplication();
+ServicesFiles servicesFiles = new ServicesFiles(filePath: "file.txt");
+ServicesPrint servicesPrint = new ServicesPrint();
 
+//FileUtils f = new FileUtils(filePath: "file.txt")
+//f.readFileData(arraylistOfPeoplelistOfPeople,arraylistOfCompanies)
+servicesFiles.readFileData(arraylistOfPeople,arraylistOfCompanies)
 
 //Printando o menu
 println "Bem vindo ao LinkeTinder!"
 println "Uma união de Tinker mais Linkedin!"
 
-int resposta = Utils.printarMenu();
 
-while(resposta != 0){
-    if(resposta == 1) Utils.listarEmpresas(c);
-    else if(resposta == 2) Utils.listarDevs(p);
+int answer = servicesPrint.printMenu();
 
-    if(Utils.voltarMenu() == 0){
-        resposta = Utils.printarMenu()
+while(answer != 0){
+    if(answer == 1) servicesApplication.listCompanies(arraylistOfCompanies);
+    else if(answer == 2) servicesApplication.listPeople(arraylistOfPeople);
+    else if (answer == 3) {
+        servicesApplication.insertCompany(arraylistOfCompanies,servicesPrint.companyWasInserted())
     }
-    else {
-        resposta = 0
+    else if(answer == 4){
+        servicesApplication.insertPerson(arraylistOfPeople, servicesPrint.personWasInserted())
+    }
+    else if (answer == 5){
+        servicesFiles.exportFileData(arraylistOfPeople, arraylistOfCompanies)
+    }
+
+    if(servicesPrint.backMenu() == 1){
+        answer = servicesPrint.printMenu();
+    } else {
+        answer = 0;
     }
 }
 
