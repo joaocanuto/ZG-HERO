@@ -1,4 +1,4 @@
-package com.joaocanuto.application
+package com.joaocanuto.application.patterns
 
 class Person extends PersonPattern{
     String cpf
@@ -7,7 +7,8 @@ class Person extends PersonPattern{
 
     @Override
     public String toString() {
-        return  name  +
+        return  tipo +
+                "," + name +
                 "," + email  +
                 "," + cpf  +
                 "," + idade  +
@@ -15,5 +16,6 @@ class Person extends PersonPattern{
                 "," + cep  +
                 "," + descricao  +
                 "," + competencias;
+
     }
 }
