@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+background {
+    display: table;
+    width: 100vw;
+    height: 100vh;
+    color :#eee;
+}
+
+.titulo{
+    text-align: center;
+    font-size: 50px;
+    color :#eee;
+    background: rgb(180, 15, 15);
+}
