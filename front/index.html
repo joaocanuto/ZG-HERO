@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen"/>
+    <title>LinkeTinder</title>
+</head>
+<body>
+    <div class = "headerPage"> <h1 class = "titulo">LinkeTinder</h1> </div>
+
+    <div class = "login" id="app">
+        <h2 class = "loginHeader">Login</h2>
+        <div class="loginScoop">
+            <label for="email"><b>Email</b></label>
+            <input type="text" id = "uemail" placeholder="Enter a email">
+            <label for="psw"><b>Password</b></label>
+            <input type="password" id = "upswd" placeholder="Enter Password">
+            <button type="button" id = "blogin">Login</button>
+            <button style = "margin: 10px"type="button" class="creataccbtn" id = "bttcreat">Creat an Account</button>
+          </div>
+          <input style = "margin: 5px;" type="file" id="fileInput">
+    </div>
+    <div class="cadastro" id="app2">
+        <label for="cadname"><b>Nome:</b></label>
+        <input type="text" id = "cadnome" placeholder="Enter a name">
+        <label for="cadmail"><b>Email</b></label>
+        <input type="text" id = "cadmail" placeholder="Enter a email">
+        <label for="cadpswd"><b>Senha</b></label>
+        <input type="password" id = "cadsenha" placeholder="Enter a password">
+        <label for="cadtype"><b>Candidato ou Empresa:</b></label>
+        <select class="cadtype" id="cadType" placeholder="Tipo...">
+            <option value="empresa">Empresa</option>
+            <option value="candidato">Candidato</option>
+          </select>
+          <button style = "margin: 10px; width: 40px; height: 20px"type="button" class="nextCad" id = "bttNext">Next</button>
+          <div class ="nextCadCandidate" id = "ncadcad">
+            <label for="cadcadstate"><b>Estado:</b></label>
+            <input type="text" id = "cadcadstate" placeholder="Enter a state">
+            <label for="cadcadcep"><b>CEP:</b></label>
+            <input type="text" id = "cadcadcep" placeholder="Enter a CEP">
+            <label for="cadcaddesc"><b>Descrição:</b></label>
+            <input type="text" id = "cadcaddesc" placeholder="Enter a password">
+            <label for="cadcadcpf"><b>CPF:</b></label>
+            <input type="text" id = "cadcadcpf" placeholder="Enter a name">
+            <label for="cadcadage"><b>Idade:</b></label>
+            <input type="number" id = "cadcadage" placeholder="Enter a age">
+            <label for="cadcadkills"><b>Skills:</b></label>
+            <input type="text" id = "cadcadskills" placeholder="java,groovy,typescript,...">
+          </div>
+          <div class ="nextCadComp" id = "ncadcomp">
+            <label for="cadcompstate"><b>Estado:</b></label>
+            <input type="text" id = "cadcompstate" placeholder="Enter a state">
+            <label for="cadcompcep"><b>CEP:</b></label>
+            <input type="text" id = "cadcompcep" placeholder="Enter a CEP">
+            <label for="cadcompdesc"><b>Descrição:</b></label>
+            <input type="text" id = "cadcompdesc" placeholder="Enter a password">
+            <label for="cadcompcnpj"><b>CNPJ:</b></label>
+            <input type="text" id = "cadcompcnpj" placeholder="Enter a name">
+            <label for="cadcompcountry"><b>Country:</b></label>
+            <input type="text" id = "cadcompcountry" placeholder="Enter a age">
+            <label for="cadcompskills"><b>Skills:</b></label>
+            <input type="text" id = "cadcompskills" placeholder="java,groovy,typescript,...">
+          </div>
+          <button style = "margin: 10px; width: 100px; height: 20px"type="button" id = "submitCad">Cadastrar</button>
+    </div> 
+    <div class = "p2" id = "pefil-page">
+        <div class = "p3" id = "headerLogin"></div>
+        <div class = "p4" id = "listofAny">
+        </div>  
+    </div> 
+    <script async type="module" src="main.js"></script>
+</body>
+</html>
