@@ -1,13 +1,58 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const candidate_1 = __importDefault(require("./modelo/candidate"));
-const companie_1 = __importDefault(require("./modelo/companie"));
+class Candidate {
+    constructor(nome = '', email = '', password = '', type = '', state = '', cep = '', desc = '', cpf = '', age = 0, skills = []) {
+        this.nome = nome;
+        this.email = email;
+        this.password = password;
+        this.type = type;
+        this.state = state;
+        this.cep = cep;
+        this.desc = desc;
+        this.cpf = cpf;
+        this.age = age;
+        this.skills = skills;
+    }
+}
+class Companie {
+    constructor(nome = '', email = '', password = '', type = '', state = '', cep = '', desc = '', cnpj = '', country = '', skills = []) {
+        this.nome = nome;
+        this.email = email;
+        this.password = password;
+        this.type = type;
+        this.state = state;
+        this.cep = cep;
+        this.desc = desc;
+        this.cnpj = cnpj;
+        this.country = country;
+        this.skills = skills;
+    }
+}
 let listCandidates = Array();
 let listCompanies = Array();
-let c = new candidate_1.default();
-let cp = new companie_1.default();
-listCompanies.push(cp);
-console.log(listCompanies[0]);
+window.onload = function () {
+    const userEmail = document.querySelector("#u-email");
+    const userPswd = document.getElementById("#u-pswd");
+    const bttLogin = document.getElementById("#b-login");
+    bttLogin.addEventListener('click', () => console.log('A'));
+};
+document.addEventListener('DOMContentLoaded', function () {
+    const userEmail = document.querySelector("#u-email");
+    const userPswd = document.getElementById("#u-pswd");
+    const bttLogin = document.getElementById("#b-login");
+    bttLogin.addEventListener('click', () => console.log('A'));
+});
+function userlogin() {
+    console.log('AAA');
+    // let mail: any = userEmail?.nodeValue
+    // let psw  = userPswd;
+    // console.log(mail + " " + psw)
+    // if(verificaLogin(mail,psw) == true){
+    //     // go to page profile
+    // } else {
+    //     //cria um alerta na pagina!
+    // }
+}
+function verificaLogin(mail, psd) {
+    //verifica se o login existe no arquivo txt!
+    return true;
+}

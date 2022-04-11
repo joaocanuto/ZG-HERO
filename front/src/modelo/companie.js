@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class Companie {
+export default class Companie {
     constructor(nome = '', email = '', password = '', type = '', state = '', cep = '', desc = '', cnpj = '', country = '', skills = []) {
         this.nome = nome;
         this.email = email;
@@ -14,4 +12,3 @@ class Companie {
         this.skills = skills;
     }
 }
-exports.default = Companie;
