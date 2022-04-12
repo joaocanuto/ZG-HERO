@@ -57,6 +57,54 @@ let cadcompskills = document.querySelector("#cadcompskills");
 let nextcadcad = document.querySelector("#ncadcad");
 let nextcadcomp = document.querySelector("#ncadcomp");
 let bttCadastra = document.querySelector("#submitCad");
+function validaDadosComp(a) {
+    const regexNome = /[0-9]|\$|\&|\*|\(|\)|\@|\!|\#|\%|\?/gi; // me retorna true se não simbolos
+    const regexTag = /\$|\&|\*|\(|\)|\@|\!|\#|\%|\?/gi; // retorna true se nao o simbolo
+    const regexCNPJ = /\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}/g; //retorn true se estiver ok
+    const regexEmail = /[\w.]+@\w+\.\w{2,4}(\.\w{2})?/g;
+    const regexCep = /\d{5}\-\d{3}/g;
+    let aux = '';
+    for (let i = 0; i < a.skills.length; i++) {
+        aux += a.skills[i];
+    }
+    if (regexNome.test(a.nome))
+        return false;
+    if (regexEmail.test(a.email))
+        return false;
+    if (regexCep.test(a.cep))
+        return false;
+    if (regexCNPJ.test(a.cnpj))
+        return false;
+    if (regexTag.test(aux))
+        return false;
+    return true;
+}
+function validaDadosCand(a) {
+    const regexNome = /[0-9]|\$|\&|\*|\(|\)|\@|\!|\#|\%|\?/gi;
+    const regexTag = /\$|\&|\*|\(|\)|\@|\!|\#|\%|\?/gi;
+    const regexCPF = /\d{3}\.\d{3}\.\d{3}-\d{2}/g;
+    const regexEmail = /[\w.]+@\w+\.\w{2,4}(\.\w{2})?/g;
+    const regexCep = /\d{5}\-\d{3}/g;
+    let aux = '';
+    for (let i = 0; i < a.skills.length; i++) {
+        aux += a.skills[i];
+    }
+    if (regexNome.test(a.nome) ||
+        regexTag.test(aux) ||
+        regexCPF.test(a.cpf) ||
+        regexEmail.test(a.email) ||
+        regexCep.test(a.cep)) {
+        return false;
+    }
+    const regexLinkedin = /https\:\/\/www.linkedin.com\/in\/[a-z]/;
+    if (regexLinkedin.test(a.desc)) {
+        alert("Você colocou seu linkedin corretamente na sua descrição!");
+    }
+    else {
+        alert("Você não colocou ou não colocou seu linkedin corretamente na sua descrição!");
+    }
+    return true;
+}
 function atribueSkills(t) {
     let ArrayAux = t.split(',');
     let stringAux = [];
@@ -112,7 +160,7 @@ function verificaCad(candidate) {
         candidate.skills.length == 0 ||
         candidate.state == '')
         return false;
-    return true;
+    return validaDadosCand(candidate);
 }
 function verificaComp(company) {
     if (company.nome == '' ||
@@ -124,7 +172,7 @@ function verificaComp(company) {
         company.skills.length == 0 ||
         company.state == '')
         return false;
-    return true;
+    return validaDadosComp(company);
 }
 function userlogin() {
     let mail = userEmail.value;
