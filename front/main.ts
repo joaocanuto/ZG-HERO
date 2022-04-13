@@ -72,10 +72,11 @@ let cadcompcountry = document.querySelector("#cadcompcountry") as HTMLInputEleme
 let cadcompskills = document.querySelector("#cadcompskills") as HTMLInputElement;
 let nextcadcad = document.querySelector("#ncadcad") as HTMLDivElement;
 let nextcadcomp = document.querySelector("#ncadcomp") as HTMLDivElement;
-
+let perfilPage = document.getElementById("pefil-page");
+let list = document.getElementById("listofAny");
 let bttCadastra = document.querySelector("#submitCad");
 
-function validaDadosComp(a : Companie): boolean {
+function validaDadosCompanie(a : Companie): boolean {
     const regexNome = /[0-9]|\$|\&|\*|\(|\)|\@|\!|\#|\%|\?/gi  // me retorna true se não simbolos
     const regexTag = /\$|\&|\*|\(|\)|\@|\!|\#|\%|\?/gi// retorna true se nao o simbolo
     const regexCNPJ = /\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}/g //retorn true se estiver ok
@@ -85,16 +86,19 @@ function validaDadosComp(a : Companie): boolean {
     for(let i = 0; i < a.skills.length; i++) {
         aux += a.skills[i]
     }
-    if(regexNome.test(a.nome)) return false;
-    if(regexEmail.test(a.email)) return false;
-    if(regexCep.test(a.cep)) return false;
-    if(regexCNPJ.test(a.cnpj)) return false;
-    if(regexTag.test(aux)) return false;
+
+    if(regexNome.test(a.nome) ||
+    regexTag.test(aux) ||
+    !regexCNPJ.test(a.cnpj) || 
+    !regexEmail.test(a.email) ||
+    !regexCep.test(a.cep)
+    ){
+        return false;
+    }
+
     return true;
 }
-
-
-function validaDadosCand(a : Candidate): boolean {
+function validaDadosCandidate(a : Candidate): boolean {
     const regexNome = /[0-9]|\$|\&|\*|\(|\)|\@|\!|\#|\%|\?/gi 
     const regexTag = /\$|\&|\*|\(|\)|\@|\!|\#|\%|\?/gi
     const regexCPF = /\d{3}\.\d{3}\.\d{3}-\d{2}/g
@@ -108,9 +112,9 @@ function validaDadosCand(a : Candidate): boolean {
 
     if(regexNome.test(a.nome) ||
     regexTag.test(aux) ||
-    regexCPF.test(a.cpf) || 
-    regexEmail.test(a.email) ||
-    regexCep.test(a.cep)
+    !regexCPF.test(a.cpf) || 
+    !regexEmail.test(a.email) ||
+    !regexCep.test(a.cep)
     ){
         return false;
     }
@@ -122,6 +126,28 @@ function validaDadosCand(a : Candidate): boolean {
         alert("Você não colocou ou não colocou seu linkedin corretamente na sua descrição!")
     }
     return true;
+}
+function verificaCandidate(candidate : Candidate): boolean{
+    if(candidate.nome == '' ||
+        candidate.email == '' ||
+        candidate.age == 0 ||
+        candidate.cep == '' ||
+        candidate.cpf == '' ||
+        candidate.password == '' ||
+        candidate.skills.length == 0 ||
+        candidate.state == '') return false;
+    return validaDadosCandidate(candidate); 
+}
+function verificaCompany(company : Companie): boolean{
+    if(company.nome == '' ||
+        company.email == '' ||
+        company.country == '' ||
+        company.cep == '' ||
+        company.cnpj == '' ||
+        company.password == '' ||
+        company.skills.length == 0 ||
+        company.state == '') return false;
+    return validaDadosCompanie(company); 
 }
 
 function atribueSkills(t : string) {
@@ -136,7 +162,6 @@ function atribueSkills(t : string) {
 function creteAccount(){
     let d = loginScoop;
     d!.style.display = "none";
-    console.log(cadScoop);
     cadScoop!.style.display = "grid";
 
     bttNext && bttNext.addEventListener('click', () => {
@@ -155,7 +180,7 @@ function creteAccount(){
                     cadcompcountry.value,
                     atribueSkills(cadcompskills.value)
             );  
-                if(verificaComp(companieAux) == true){
+                if(verificaCompany(companieAux) == true){
                     listCompanies.push(companieAux)
                     cadScoop!.style.display = "none"
                     createPerfilPage(cadMail.value,cadPswd.value,true);
@@ -180,8 +205,7 @@ function creteAccount(){
                         Number(cadcadAge.value),
                         atribueSkills(cadcadSkills.value)
                 );
-                console.log(candidateAux);
-                if(verificaCad(candidateAux) == true){
+                if(verificaCandidate(candidateAux) == true){
                     listCandidates.push(candidateAux);
                     cadScoop!.style.display = "none"
                     createPerfilPage(cadMail.value,cadPswd.value,true);
@@ -193,56 +217,24 @@ function creteAccount(){
     });
 }
 
-function verificaCad(candidate : Candidate): boolean{
-    if(candidate.nome == '' ||
-        candidate.email == '' ||
-        candidate.age == 0 ||
-        candidate.cep == '' ||
-        candidate.cpf == '' ||
-        candidate.password == '' ||
-        candidate.skills.length == 0 ||
-        candidate.state == '') return false;
-    return validaDadosCand(candidate); 
-}
-function verificaComp(company : Companie): boolean{
-    if(company.nome == '' ||
-        company.email == '' ||
-        company.country == '' ||
-        company.cep == '' ||
-        company.cnpj == '' ||
-        company.password == '' ||
-        company.skills.length == 0 ||
-        company.state == '') return false;
-    return validaDadosComp(company); 
-}
-
-
 function userlogin(){
     let mail: string = userEmail!.value;
     let psw : string = userPswd!.value;
     console.log(mail + " " + psw)
-    //if(verificaLogin(mail,psw) == true){
-    if(true){
+    if(searchUser(mail,psw)){
         console.log("Olá, Seja Bem vindo!")
         let d = loginScoop;
         d!.style.display = "none";
         createPerfilPage(mail,psw);
      } else {
-    //     //cria um alerta na pagina!
         alert("Email ou senha incorretos!")
     }
 }
-
-let perfilPage = document.getElementById("pefil-page");
-let list = document.getElementById("listofAny");
-
-console.log(perfilPage);
 
 function createPerfilPage(mail : string, psd : string, looged?: boolean) {
     console.log(mail, psd, looged);
     let userLogged = searchUser(mail,psd);
     if(userLogged || looged) {
-    //if(true){
         perfilPage!.style.display = "grid";
         console.log("A")
         console.log(userLogged!.type)
@@ -263,14 +255,11 @@ function createPerfilPage(mail : string, psd : string, looged?: boolean) {
             })
         } else if (userLogged!.type == 'empresa') {
             listCandidates.forEach((t) => {
-                //let saidaAux = document.createElement('div')
                 let saida = document.createElement('p')
-                //saidaAux.className = 'companies'
                 
                 let s = document.createTextNode(`Nome do Candidato: ${t.nome}
                 Descrição: ${t.desc} ${"\n"}
                 Competencias: ${t.skills}${"\n"}`);
-                
                 saida.appendChild(s);
                 divUser.appendChild(saida)
             })
@@ -279,7 +268,6 @@ function createPerfilPage(mail : string, psd : string, looged?: boolean) {
         let div1 = document.getElementById("headerLogin")
         let h = document.createElement("H2");
         let txt = document.createTextNode(`Seja bem vindo ${userLogged!.nome}!`)
-        //let txt = document.createTextNode(`Seja bem vindo ${'Joao'}!`)
         h.appendChild(txt);
         div1!.appendChild(h);
     }
@@ -300,21 +288,8 @@ function searchUser(mail : string, psd : string){
     return null;
 }
 
-function verificaLogin(mail : string, psd : string) : boolean {
-    for(let i=0;i<listCandidates.length;i++){
-        if(mail === listCandidates[i].email && listCandidates[i].password === psd){
-            return true;
-        }
-    }
-    for(let i=0;i<listCompanies.length;i++){
-        if(mail === listCompanies[i].email && listCompanies[i].password === psd){
-            return true;
-        }
-    }
-    return false;
-}
 
-//Lendo o arquivo de backup: 
+//Lendo o arquivo com o banco de dados! 
 document.getElementById('fileInput')!.onchange = function(){
 
     var file = this.files[0];
