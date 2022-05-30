@@ -3,7 +3,7 @@
 | Dependencies | Version   |
 |--------------|-----------|
 | Java         | \>= 11    | 
-| PostgreSQL   | \>= 14    | 
+| PostgreSQL   | \>= 14.3    | 
 | Groovy       | \>= 4.0   | 
 | Gradle       | \>= 5.1.1 |
 
