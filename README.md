@@ -1,5 +1,14 @@
 # LinkedTinder
 
+| Dependencies | Version   |
+|--------------|-----------|
+| Java         | \>= 11    | 
+| PostgreSQL   | \>= 14    | 
+| Groovy       | \>= 4.0   | 
+| Gradle       | \>= 5.1.1 |
+
+
+
 # Próximos Updates:
 
 - Opção de desfazer alterações.
