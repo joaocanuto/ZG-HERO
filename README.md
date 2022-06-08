@@ -1,5 +1,29 @@
 # LinkedTinder
 
+| Dependencies | Version   |
+|--------------|-----------|
+| Java         | \>= 11    | 
+| PostgreSQL   | \>= 14.3    | 
+| Groovy       | \>= 4.0   | 
+| Gradle       | \>= 5.1.1 |
+| JUnit        | \>= 5.8.1 |
+
+| Frameworks   | Version   |
+|--------------|-----------|
+| Angular      | Desenvolvimento do Frontend | 
+| Spring       | Desenvolvimento do Backend  | 
+| Spoc         | Testes Únitários  | 
+| Intellij     | IDE |
+| PostgreSQL   | Manutenção do Banco de Dados |
+| Git          | Versionamento do código |
+| GitHub       | Repositório Online      |
+ 
+Angular Framework
+Spring Framework
+Spock(Testes Unitários)
+Intellij
+Git e Github
+
 # Próximos Updates:
 
 - Opção de desfazer alterações.
