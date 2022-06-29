@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+background {
+    display: table;
+    width: 100vw;
+    height: 100vh;
+    color :#eee;
+}
+
+input{
+    margin: 3px;
+}
+
+.titulo{
+    text-align: center;
+    font-size: 80px;
+    color :#eee;
+    background: black;
+}
+
+.p3 {
+    text-align: center;
+    font-size: 20px;
+    color :rgb(0, 0, 0);
+    background: rgb(212, 212, 212);
+}
+
+.item {
+    text-align: center;
+    font-size: 20px;
+    color :rgb(0, 0, 0);
+    background-color: rgb(250, 235, 215);
+}
+.p2 {
+    display: none;
+}
+
+.cadastro {
+    margin: 5px;
+    display: none;
+
+}
+
+.nextCadCandidate{
+    display: none;
+}
+
+.nextCadComp{
+    display: none;
+}

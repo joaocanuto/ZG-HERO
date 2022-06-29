@@ -1,6 +1,0 @@
-João Guilherme,joaogacanuto@gmail.com,123456,candidato,Ceará,60420750,Dev buscando se profissionalizar,12345678912,21,JavaScript,TypeScript,Java,Groovy,C++,C,Git
-ZG,ZG@gmail.com,123456,empresa,Ceará,60420750,buscando devs jrs,12345678912,Brazil,JavaScript,TypeScript
-Dry,Dry@gmail.com,123456,empresa,Ceará,60420750,buscando dev seniors,12345678912,Brazil,Groovy,C++,C,Git
-Gustavo,gstv@gmail.com,123456,candidato,Ceará,60420750,Senior,12345678912,16,JavaScript,TypeScript,Java,Groovy,C++,C,Git
-Heloisa,heloi123@gmail.com,123456,candidato,Ceará,60420750,Senior-Senior,12345678912,16,JavaScript,TypeScript,Java,Groovy,C++,C,Git
-Unimed,Unimed@gmail.com,123456,empresa,Ceará,60420750,buscando devs jrs,12345678912,Brazil,JavaScript,TypeScript

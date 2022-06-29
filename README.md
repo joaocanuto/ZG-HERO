@@ -1,50 +1,19 @@
-# LinkedTinder
+# LinkedTinder Updates:
 
-| Dependencies | Version   |
-|--------------|-----------|
-| Java         | \>= 11    | 
-| PostgreSQL   | \>= 14.3    | 
-| Groovy       | \>= 4.0   | 
-| Gradle       | \>= 5.1.1 |
-| JUnit        | \>= 5.8.1 |
+Se você desejar ver a documentação da aplicação está tudo documentado no arquivo : DOC.md 
 
-| Frameworks   | Version   |
-|--------------|-----------|
-| Angular      | Desenvolvimento do Frontend | 
-| Spring       | Desenvolvimento do Backend  | 
-| Spoc         | Testes Únitários  | 
-| Intellij     | IDE |
-| PostgreSQL   | Manutenção do Banco de Dados |
-| Git          | Versionamento do código |
-| GitHub       | Repositório Online      |
- 
-Angular Framework
-Spring Framework
-Spock(Testes Unitários)
-Intellij
-Git e Github
+## Planejamento : 
+Refatorar tasks mal feitas, que foram algumas.
+E produzir em cima do novo, as novas etapas da aplicação!
 
-# Próximos Updates:
+## Desenvolvimento do Projeto:
 
-- Opção de desfazer alterações.
-- Inserir pessoas e Empresas
-- Updates no banco de dados
-- Entradas Inválidas não são permitidas em toda a execução do código.
+Sprint 1 :
 
-# Versão 1.0.0-alpha
+| Sprint 1                                    | Status  |
+|---------------------------------------------|---------|
+| Refatoração das Pastas do Projeto           | Working | 
+| Implementação do Banco de Dados             | Working | 
+| Persistência do BD                          | To Do   | 
+| Implementação de Microservices na aplicação | To Do   |
 
-**-Implementação da Aplicação.**
-
-## Funções:
-
-![Untitled.png](Images/Untitled.png)
-
-### Listar as Pessoas e Empresas:
-
-Apenas imprime os cadastrados no banco de dados
-
-Aqui, você receberá um output com uma listagem seccionada por cada ramo.
-
-### Alterações de Devs e Empresa:
-
-As alterações aqui só serão feitas alterando o arquivo file.txt.
