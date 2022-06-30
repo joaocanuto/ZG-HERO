@@ -12,7 +12,7 @@ Sprint 1 :
 
 | Sprint 1                                    | Status  |
 |---------------------------------------------|---------|
-| Refatoração das Pastas do Projeto           | Working | 
+| Refatoração das Pastas do Projeto           | Done | 
 | Implementação do Banco de Dados             | Working | 
 | Persistência do BD                          | To Do   | 
 | Implementação de Microservices na aplicação | To Do   |
