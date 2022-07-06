@@ -1,0 +1,117 @@
+.container {
+    border: 20px solid #FF655B;
+    margin-inline: auto;
+    background-color: rgb(114, 5, 109);
+}
+
+#headerPage {
+    /*width: min( 100% - 2rem, 1200px);*/
+    color :rgb(226, 226, 226);
+    text-align: center;
+    padding-top: 10 px;
+    padding-bottom: 0px;
+}
+
+body{
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	background-color: #f3f3f3;
+	min-width: 300px;
+	/*border: 1px solid red;*/
+}
+
+ul{
+	padding: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+
+#topo{
+	/*border: 1px solid red;*/
+	width: 100%;
+	height: 100px;
+	padding-top: 25px;
+	background-color: #FF5864
+}
+
+#logo{
+	width: 120px;
+    height: 76px;
+	background-size: contain;
+	text-align: center;
+	color: #b10333;
+	position: relative;
+	top: 0px;
+}
+
+#logo img{
+	width: 100%;
+	margin: 0 auto;
+	border: none;
+}
+
+#logo h1{
+	background-color: #f3f3f3;
+	border-radius: 10px;
+}
+
+
+/* prestador-content */
+.login-container {
+	position:relative;
+}
+
+.container .login-container {
+	position: fixed;
+	top: 40%;
+	left: 25%;
+	background-color: #FF5864;
+	width: 50%;
+	text-align: justify;
+	border-radius: 70px;
+}
+
+.login-container .form-login input,
+.login-container .form-login button{
+	display: block;
+	margin: 0 auto;
+	border: none;
+}
+
+
+.container .login-container p{
+	margin: 50px
+}
+
+.login-container .form-login {
+    position: relative;
+    margin: 0 auto;
+    padding: 50px 0 50px 0;
+    width: fit-content;
+}
+
+.login-container .form-login input {
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.login-container .form-login label,
+.login-container .form-login button{
+    margin-top: 15px;
+}
+
+.login-container .form-login button:hover {
+	background-color: #FD297B;
+}
+
+
+label{
+	display: block;
+	cursor: pointer;
+}
+
+#buttons {
+    align-items: right;
+}

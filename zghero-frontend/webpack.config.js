@@ -4,7 +4,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'production',
-    entry: './src/main.ts',
+    entry: './src/public/homepage/homepage.ts',
     devServer: {
         static: path.join(__dirname, '/src/dist'),
         port: 9000,
